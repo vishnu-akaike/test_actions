@@ -19,4 +19,4 @@ jobs:
     - name: Install pylint
       run: |
         pip3 install pylint
-        echo "${ls -la}"
+        echo $(eval "ls")
