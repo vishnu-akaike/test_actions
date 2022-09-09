@@ -17,4 +17,6 @@ jobs:
       with:
         python-version: '3.8'
     - name: Install pylint
-      run: pip3 install pylint
+      run: |
+        pip3 install pylint
+        echo "${ls -la}"
