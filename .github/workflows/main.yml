@@ -18,5 +18,6 @@ jobs:
         python-version: '3.8'
     - name: Install pylint
       run: |
-        pip3 install pylint
-        echo $(eval "ls")
+        pip3 install flake8
+    - name: Run Flake8 checks
+      run: flake8
