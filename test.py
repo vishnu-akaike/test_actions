@@ -7,4 +7,3 @@ def print_current_dir():
 
 if __name__ == "__main__":
     print_current_dir()
-
