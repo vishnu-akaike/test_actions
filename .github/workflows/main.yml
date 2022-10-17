@@ -1,12 +1,9 @@
 name: Python Code Quality Check
 
 on:
-  push:
-    branches:
-    - dev
   pull_request:
     branches:
-      - staging
+      - dev
   workflow_dispatch:
   
 jobs:
@@ -24,3 +21,18 @@ jobs:
         pip3 install flake8
     - name: Run Flake8 checks
       run: flake8
+  unit_tests:
+    name: Unit tests
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use python 3.8
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.8'
+    - name: Install requirements
+      run: pip3 install -r requirements.txt
+    - name: Install pytest
+      run: pip3 install pytest
+    - name: Run PyTest
+      run: python3 -m pytest
